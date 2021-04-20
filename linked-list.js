@@ -111,11 +111,11 @@ class LinkedList{
 }
 
 const linkedList = new LinkedList()
-linkedList.unshift(1)
-linkedList.unshift(2)
-linkedList.unshift(3)
-linkedList.unshift(4)
-linkedList.unshift(5)
-linkedList.unshift(6)
-console.log(linkedList.insert(4,1))
- console.log(linkedList.head)
+
+linkedList.unshift('LT2 Lecture Theater')
+linkedList.unshift('SEET Building')
+linkedList.unshift('SUB Building')
+linkedList.unshift('North Gate')
+linkedList.unshift('New Castle Lodge')
+linkedList.unshift('Winterfell Lodge')
+console.log(JSON.stringify(linkedList))
