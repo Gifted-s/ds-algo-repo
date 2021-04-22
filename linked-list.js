@@ -5,7 +5,7 @@ class Node{
     }
 }
 
-class LinkedList{
+ class LinkedList{
     constructor(){
         this.head=null;
         this.length=0;
@@ -118,4 +118,6 @@ linkedList.unshift('SUB Building')
 linkedList.unshift('North Gate')
 linkedList.unshift('New Castle Lodge')
 linkedList.unshift('Winterfell Lodge')
-console.log(JSON.stringify(linkedList))
+
+
+module.exports= LinkedList

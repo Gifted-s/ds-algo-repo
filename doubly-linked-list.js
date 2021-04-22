@@ -157,4 +157,4 @@ doubleLinkedListSample.push(2)
 // c
 doubleLinkedListSample.insert('sunkanmi',2)
 doubleLinkedListSample.insert('ayomide',3)
-console.log(doubleLinkedListSample)
+module.exports= DoubleLinkedList
