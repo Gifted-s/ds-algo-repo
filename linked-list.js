@@ -40,6 +40,9 @@ class Node{
     if(!this.head){
       return null
     }
+    if(!this.head.next){
+        return this.head
+    }
     const removedNode= this.head
     this.head= this.head.next
     this.length--
@@ -48,8 +51,19 @@ class Node{
 // pop
    pop(){
     this.length--
-    const removedNode= this.getLast()
-    return removedNode
+    if(!this.head){
+        return null
+    }
+    if(!this.head.next){
+        return this.head
+    }
+    let currentNode=this.head
+    const lastNode = this.getLast()
+    while(currentNode.next !== lastNode){
+        currentNode = currentNode.next
+    }
+    currentNode.next=null
+    return lastNode
    }
 // push
    push(data){
@@ -118,6 +132,8 @@ linkedList.unshift('SUB Building')
 linkedList.unshift('North Gate')
 linkedList.unshift('New Castle Lodge')
 linkedList.unshift('Winterfell Lodge')
-
+linkedList.unshift('Kingsand Queen')
+console.log(linkedList.pop())
+console.log(linkedList.get(5))
 
 module.exports= LinkedList

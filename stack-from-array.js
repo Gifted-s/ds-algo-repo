@@ -8,9 +8,9 @@ class Stack{
     pop(){
         return this.items.pop()
     }
-    peek(index){
+    peek(){
         if(index<0 || index> this.items.length-1)  return null
-            return this.items[this.items.length-1 - index]
+            return this.items[0]
     }   
 }
 

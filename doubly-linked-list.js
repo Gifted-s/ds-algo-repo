@@ -62,19 +62,24 @@ class DoubleLinkedList {
     }
     // pop
     pop() {
+        if(!this.head.next) {
+             return  this.shift()
+        }
+        if(!this.head) return null
         this.length--
-        const removedNode = this.getLast()
+        const lastNode = this.tail
         this.tail.previous.next = null
         this.tail = this.tail.previous
-        return removedNode
+        return lastNode
     }
     // push
     push(data) {
         if (!this.head) {
             return this.unshift(data)
         }
-        const newNode = new Node(this.tail, data, null)
-        this.tail.next = newNode
+        let lastNode = this.tail
+        const newNode = new Node(lastNode, data, null)
+        lastNode.next = newNode
         this.tail = newNode
         this.length++
     }
@@ -123,17 +128,14 @@ remove(index){
 
     }
 
-    if(index<0 || index>this.length-1) return false
-    const prevNode= this.get(index-1)
-    
-    if(index===this.length-1){
-        const newNode = new Node(prevNode, data, null)
-        this.tail.next = newNode
-        this.tail = newNode
-        this.length++
+    if(index<0 || index>this.length) return false
+   
+    if(index==this.length){
+        this.push(data)
         return true
     }
     else{
+        const prevNode= this.get(index-1)
         const newNode = new Node(prevNode, data, prevNode.next)
         prevNode.next= newNode
         this.length++
@@ -148,13 +150,17 @@ remove(index){
 
 
 const doubleLinkedListSample = new DoubleLinkedList()
-doubleLinkedListSample.push(9)
-doubleLinkedListSample.push(1)
-doubleLinkedListSample.push(2)
+// doubleLinkedListSample.push(9)
+// doubleLinkedListSample.push(1)
+// doubleLinkedListSample.push(2)
+// // doubleLinkedListSample.push(0)
+// console.log(doubleLinkedListSample)
+// console.log(doubleLinkedListSample.pop())
+// console.log(doubleLinkedListSample)
+// doubleLinkedListSample.insert(10,2)
+// console.log(doubleLinkedListSample)
 // console.log(doubleLinkedListSample.pop())
 // console.log(doubleLinkedListSample.getLast())
-
 // c
-doubleLinkedListSample.insert('sunkanmi',2)
-doubleLinkedListSample.insert('ayomide',3)
+
 module.exports= DoubleLinkedList

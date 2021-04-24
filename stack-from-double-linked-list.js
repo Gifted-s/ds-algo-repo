@@ -18,7 +18,7 @@ class Stack{
   peek(index){
     if(index<0 || index> this.items.length-1)  return null
     
-      return this.items.get(index)
+      return this.items.head
   }
 }
 
