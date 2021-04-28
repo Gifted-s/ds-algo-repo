@@ -20,14 +20,19 @@ class Stack{
     
       return this.items.head
   }
+  size(){
+    return this.items.length
+  }
 }
 
 const stack = new Stack()
-stack.push(1)
-stack.push(2)
-stack.push(3)
-stack.push(4)
-console.log(stack)
-console.log(stack.pop())
-console.log(stack)
-console.log(stack.peek(0))
+
+module.exports=Stack
+// stack.push(1)
+// stack.push(2)
+// stack.push(3)
+// stack.push(4)
+// console.log(stack)
+// console.log(stack.pop())
+// console.log(stack)
+// console.log(stack.peek(0))

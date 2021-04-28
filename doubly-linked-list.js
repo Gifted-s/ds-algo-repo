@@ -62,10 +62,10 @@ class DoubleLinkedList {
     }
     // pop
     pop() {
-        if(!this.head.next) {
-             return  this.shift()
+        if (!this.head.next) {
+            return this.shift()
         }
-        if(!this.head) return null
+        if (!this.head) return null
         this.length--
         const lastNode = this.tail
         this.tail.previous.next = null
@@ -98,53 +98,57 @@ class DoubleLinkedList {
     }
 
     // set
-   set(data,index){
-    if(index<0 || index>this.length-1) return false
-    const nodeToReplace = this.get(index)
-    nodeToReplace.data=data
-    return true
-}
-
-// remove
-remove(index){
-    if(index===0) {
-        this.shift()
-        return true
-
-    }
-    if(index<0 || index>this.length-1) return false
-    let prevNode = this.get(index) 
-    prevNode.previous.next= prevNode.next
-    prevNode=null
-    return true
-   }
-
-
-   // insert
-   insert(data,index){
-    if(index===0) {
-        this.unshift(data)
-        return true
-
-    }
-
-    if(index<0 || index>this.length) return false
-   
-    if(index==this.length){
-        this.push(data)
+    set(data, index) {
+        if (index < 0 || index > this.length - 1) return false
+        const nodeToReplace = this.get(index)
+        nodeToReplace.data = data
         return true
     }
-    else{
-        const prevNode= this.get(index-1)
-        const newNode = new Node(prevNode, data, prevNode.next)
-        prevNode.next= newNode
-        this.length++
+
+    size() {
+        return this.length
+    }
+
+    // remove
+    remove(index) {
+        if (index === 0) {
+            this.shift()
+            return true
+
+        }
+        if (index < 0 || index > this.length - 1) return false
+        let prevNode = this.get(index)
+        prevNode.previous.next = prevNode.next
+        prevNode = null
         return true
     }
-    
-   
-    
-   }
+
+
+    // insert
+    insert(data, index) {
+        if (index === 0) {
+            this.unshift(data)
+            return true
+
+        }
+
+        if (index < 0 || index > this.length) return false
+
+        if (index == this.length) {
+            this.push(data)
+            return true
+        }
+        else {
+            const prevNode = this.get(index - 1)
+            const newNode = new Node(prevNode, data, prevNode.next)
+            prevNode.next = newNode
+            this.length++
+            return true
+        }
+
+
+
+    }
 }
 
 
@@ -163,4 +167,4 @@ const doubleLinkedListSample = new DoubleLinkedList()
 // console.log(doubleLinkedListSample.getLast())
 // c
 
-module.exports= DoubleLinkedList
+module.exports = DoubleLinkedList
