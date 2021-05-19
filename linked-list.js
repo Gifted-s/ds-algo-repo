@@ -126,14 +126,14 @@ class Node{
 
 const linkedList = new LinkedList()
 
-linkedList.unshift('LT2 Lecture Theater')
-linkedList.unshift('SEET Building')
-linkedList.unshift('SUB Building')
-linkedList.unshift('North Gate')
-linkedList.unshift('New Castle Lodge')
-linkedList.unshift('Winterfell Lodge')
-linkedList.unshift('Kingsand Queen')
-console.log(linkedList.pop())
-console.log(linkedList.get(5))
+// linkedList.unshift('LT2 Lecture Theater')
+// linkedList.unshift('SEET Building')
+// linkedList.unshift('SUB Building')
+// linkedList.unshift('North Gate')
+// linkedList.unshift('New Castle Lodge')
+// linkedList.unshift('Winterfell Lodge')
+// linkedList.unshift('Kingsand Queen')
+// console.log(linkedList.pop())
+// console.log(linkedList.get(5))
 
 module.exports= LinkedList
