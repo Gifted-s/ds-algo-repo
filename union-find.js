@@ -65,43 +65,59 @@ class UnionFind {
 
 
 
- let union_find= new UnionFind(12)
-// console.log(union_find.noOfComponents)
-union_find.unify(4,9)
-union_find.unify(1,0)
-union_find.unify(5,6)
-union_find.unify(5,10)
-union_find.unify(4,3)
-union_find.unify(3,2)
-union_find.unify(7,1)
-union_find.unify(4,5)
-union_find.unify(5,10)
-union_find.unify(11,8)
-union_find.unify(11,1)
-union_find.unify(11,10)
+//  let union_find= new UnionFind(12)
+// // console.log(union_find.noOfComponents)
+// union_find.unify(4,9)
+// union_find.unify(1,0)
+// union_find.unify(5,6)
+// union_find.unify(5,10)
+// union_find.unify(4,3)
+// union_find.unify(3,2)
+// union_find.unify(7,1)
+// union_find.unify(4,5)
+// union_find.unify(5,10)
+// union_find.unify(11,8)
+// union_find.unify(11,1)
+// union_find.unify(11,10)
 
- console.table(union_find.id)
- console.log(union_find.noOfComponents)
-console.log(union_find.sz)
+//  console.table(union_find.id)
+//  console.log(union_find.noOfComponents)
+//  console.log(union_find.sz)
 
 
 // this example will help you  understand the effect of path compression much more better
-// let union_find = new UnionFind(10)
-// A B C D E F G H I J
-// 0 1 2 3 4 5 6 7 8 9
-// union_find.unify(0, 1)
-// union_find.unify(2, 3)
-// union_find.unify(4, 5)
-// union_find.unify(6, 7)
-// union_find.unify(8, 9)
-// union_find.unify(9, 6)
-// union_find.unify(7, 5)
-// union_find.unify(0, 2)
-// union_find.unify(3,4)
-// union_find.unify(6,1)
-// union_find.unify(8,9)
+let union_find = new UnionFind(10)
+//A B C D E F G H I J
+//0 1 2 3 4 5 6 7 8 9
+union_find.unify(0, 1)
+union_find.unify(2, 3)
+union_find.unify(4, 5)
+union_find.unify(6, 7)
+union_find.unify(8, 9)
+union_find.unify(9, 6)
+union_find.unify(7, 5)
+union_find.unify(0, 2)
+union_find.unify(3,4)
+union_find.unify(6,1)
+union_find.unify(8,9)
 
 
-// console.table(union_find.id)
+ console.table(union_find.id)
 // console.log(union_find.noOfComponents)
 // console.log(union_find.sz)
+
+//OUTPUT
+// ┌─────────┬────────┐
+// │ (index) │ Values │
+// ├─────────┼────────┤
+// │    0    │   8    │
+// │    1    │   8    │
+// │    2    │   0    │
+// │    3    │   0    │
+// │    4    │   8    │
+// │    5    │   4    │
+// │    6    │   8    │
+// │    7    │   8    │
+// │    8    │   8    │
+// │    9    │   8    │
+// └─────────┴────────┘
