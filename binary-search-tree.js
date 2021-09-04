@@ -1,169 +1,212 @@
+// Copyright Adewumi Sunkanmi Data structures Repository 
+// Available for anyone who wants to learn the Binary Search Tree Data Structure
+const Queue = require("./queue-from-array");
+
+// The Node Contructor
 class Node {
-    constructor(left, data, right) {
-        this.left = left;
-        this.data = data;
+    constructor(left, right, data) {
+        this.left = left
         this.right = right;
+        this.data = data;
     }
 }
-
-
 class BST {
     constructor() {
+        this.noOfComponents = 0;
         this.root = null
     }
-
-    insert(data) {
-        const node = new Node(null, data, null)
+    add(node, data) {
+        // if there is no root then just set the root to the new node
         if (!this.root) {
-            this.root = node
-            return
+            this.root = new Node(null, null, data)
         }
-        let current = this.root
-        while (true) {
-            if (data < current.data) {
-                if (current.left === null) {
-                    current.left = node
-                    return
-                }
-                current = current.left
-            }
+        // if a null node was found, set it to the new node
+        else if (node == null) {
+            node = new Node(null, null, data)
+        }
 
+        else {
+            //  compare the data with each node's data
+            let cmp = this.compare(node, data)
+            // if data is less than the left subtree
+            if (cmp < 0) {
+                // recurse to the left subtree
+                node.left = this.add(node.left, data)
+            }
             else {
-                if (current.right === null) {
-                    current.right = node
-                    return
-                }
-                current = current.right
+                // recurse to the right subtree
+                node.right = this.add(node.right, data)
             }
         }
-    }
-
-     
-    remove(value){
-        this.root = this.removeNode(this.root, value)
-    }
-    // a recursive function to insert a new value in binary search tree
-    
-    removeNode(current, value) {
-        
-        // base case, if the tree is empty 
-        
-       if(current === null) return current
-        
-        // when value is the same as current's value, this is the node to be deleted
-        
-        if (value === current.value) {
-             
-            // for case 1 and 2, node without child or with one child
-            
-            if (current.left === null && current.right === null){
-                
-                    return null
-                
-                }else if(current.left === null){
-                
-                    return current.right 
-             
-                }else if(current.right === null){
-                
-                    return current.left
-                
-                }else{
-                    
-                    /// node with two children, get the inorder successor, 
-                    //smallest in the right subtree
-                    
-                    let tempNode = this.kthSmallestNode(current.right)
-                        current.value = tempNode.value
-                    
-                    /// delete the inorder successor
-                    
-                        current.right = this.removeNode(current.right, tempNode.value)
-                    return current
-            }
-
-        // recur down the tree
-            
-        }else if(value < current.value) {
-            
-            current.left = this.removeNode(current.left, value)
-            return current
-            
-        }else{
-            
-            current.right = this.removeNode(current.right, value)
-            return current
-        }
-    }
-    
-     /// helper function to find the smallest node
-    
-    kthSmallestNode(node) {
-        while(!node.left === null)
-            node = node.left
-
+        // increment the number of nodes in the tree
+        this.noOfComponents++
         return node
     }
 
+    // this is especially usefull for printing elements in a tree in a sorted way
+    inOrderTraversal(node) {
+        if (node.left) {
+            // recurse down the left subtree first
+            node.left = this.inOrderTraversal(node.left)
+        }
+        // print data
+        console.log(node.data)
+        if (node.right) {
+            // recurse down the right subtree
+            node.right = this.inOrderTraversal(node.right)
+        }
 
-    
-}
 
-// traversal functions
-
-function inOrderTraversal(root){
-    if(root === null){
-        return []
     }
-    const result=[]
-    if(root.left !== null){result.push(...inOrderTraversal(root.left))}
-    result.push(root.data)
-    if(root.right !== null){ result.push(...inOrderTraversal(root.right))}
-    return result
-}
+    preOrderTraversal(node) {
+        // print data
+        console.log(node.data)
+        if (node.left) {
+            // recurse down the left subtree
+            node.left = this.preOrderTraversal(node.left)
+        }
+        // recurse down the right subtree
+        if (node.right) {
+            node.right = this.preOrderTraversal(node.right)
+        }
 
-
-
-function preOrderTraversal(root){
-    if(root === null){
-        return []
     }
-    const result=[]
-    result.push(root.data)
-    if(root.left !== null){result.push(...preOrderTraversal(root.left))}
-    if(root.right !== null){ result.push(...preOrderTraversal(root.right))}
-    return result
-}
 
+    postOrderTraversal(node) {
+        if (node.left) {
+            // recurse dpen the left subtree
+            node.left = this.postOrderTraversal(node.left)
+        }
 
-function postOrderTraversal(root){
-    if(root === null){
-        return []
+        if (node.right) {
+            // recurse down the right subtree
+            node.right = this.postOrderTraversal(node.right)
+        }
+        // print data
+        console.log(node.data)
     }
-    const result=[]
-    
-    if(root.left !== null){result.push(...postOrderTraversal(root.left))}
-    if(root.right !== null){ result.push(...postOrderTraversal(root.right))}
-    result.push(root.data)
-    return result
+    // This is also synonymous to Breath First Search(BFS) in the Graph Theory
+    levelOrderTraversal() {
+        // Create an empty queue
+        const queue = new Queue()
+        // enque the first node in the tree i.e root
+        queue.enqueue(this.root)
+        const data = []
+        do {
+            // deque the node at the front of the queue
+            let node = queue.dequeue()
+            data.push(node.data)
+            // this will help us enque the children of each node into the queue to ensure they are reached
+            for (let i of this.getNodeChildren(node)) {
+                // ensure that the child is not null be for enqueing
+                if (i !== null) {
+                    queue.enqueue(i)
+                }
+
+            }
+        } while (queue.size() > 0);
+        // return final result
+        return data
+    }
+    getNodeChildren(node) {
+        let children = [node.left, node.right]
+        return children
+    }
+    // this is to compare the data with the values in each node
+    compare(node, data) {
+        //console.log(node, "not bad")
+        if (data < node.data) {
+            return -1
+        }
+        else if (data > node.data) {
+            return 1
+        }
+        return 2
+    }
+    remove(node, data) {
+        // if node is null then return null: Base Case
+        if (node === null) return null
+        // compare the data entered to the data in the node
+        let cmp = this.compare(node, data)
+        // if the data is less than the data in the left subtree
+        if (cmp === -1) {
+            // recurse down the left subtree
+            node.left = this.remove(node.left, data)
+        }
+        // if the data is greater than the data in the right subtree 
+        else if (cmp === 1) {
+            // recurse down the right subtree
+            node.right = this.remove(node.right, data)
+        }
+        // is the data is equal to the data found on the node then it's found
+        else if (cmp === 2) {
+            // if the left child is null
+            if (!node.left) {
+                // assign a variable to the right child
+                let rightNode = node.right
+                node.data = null
+                node = null// destroy the node 
+                return rightNode // send back the right child to point to the parent of the removed node
+            }
+            // if the right child is null
+            else if (!node.right) {
+                // assign a variable to the left child
+                let leftNode = node.left
+                node.data = null
+                node = null// destroy node
+                return leftNode// send back the left node to point to the parent of the removed node
+            }
+            else {
+                // if the node has both the right and left child
+                //find the minimum node from the right subtree
+                const minNodeOnRightChild = this.findMin(node.right)
+                // set the data of the node to remove to the minimum node data
+                node.data = minNodeOnRightChild.data
+                // remove the minimum node to avoid duplicates
+                node.right = this.remove(node.right, minNodeOnRightChild.data)
+            }
+
+        }
+        // reduce component size by 1
+        this.noOfComponents--
+        // return node
+        return node
+
+    }
+    // this is the helper function that helps us find the minimum node 
+    findMin(node) {
+        if (node.left !== null) {
+            node.left = this.findMin(node.left)
+        }
+        return node
+    }
+   // get the depth of the tree
+    getDepth(node) {
+        if (!node) return 0
+        return Math.max(this.getDepth(node.left), this.getDepth(node.right)) + 1
+    }
 }
 
+const bst = new BST()
 
-const bst =new BST()
+bst.add(bst.root, 11)
+bst.add(bst.root, 6)
+bst.add(bst.root, 15)
+bst.add(bst.root, 3)
+bst.add(bst.root, 8)
+bst.add(bst.root, 1)
+bst.add(bst.root, 5)
+bst.add(bst.root, 13)
+bst.add(bst.root, 17)
+bst.add(bst.root, 12)
+bst.add(bst.root, 14)
+bst.add(bst.root, 19)
 
-bst.insert(5)
-bst.insert(43)
-bst.insert(1)
-bst.insert(8)
-bst.insert(89)
-bst.insert(12)
-bst.insert(9)
-bst.insert(54)
-bst.insert(4)
-bst.insert(2)
-console.log()
-// console.log(JSON.stringify(bst))
+//bst.inOrderTraversal(bst.root)
+//bst.preOrderTraversal(bst.root)
+//bst.postOrderTraversal(bst.root)
 
-console.log(inOrderTraversal(bst.root))
-console.log(preOrderTraversal(bst.root))
-console.log(postOrderTraversal(bst.root))
+//bst.remove(bst.root,17)
+//bst.inOrderTraversal(bst.root)
+//console.log(bst.getDepth(bst.root))
+//console.log(bst.levelOrderTraversal())

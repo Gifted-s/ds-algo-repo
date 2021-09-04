@@ -28,6 +28,9 @@ class Queue{
     if(this.items.length>0) return false
     return true
   }
+  size(){
+    return this.items.length
+  }
 }
 
 const queue = new Queue()
@@ -39,4 +42,6 @@ queue.enqueue(4)
 queue.dequeue()
 queue.dequeue()
 // queue.dequeue()
-console.log(queue)
+//console.log(queue)
+
+// module.exports = Queue
