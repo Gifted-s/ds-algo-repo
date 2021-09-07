@@ -28,7 +28,7 @@ class HashTableWithSeperateChaining {
         const constant = 37
         //    The reason to choose 37 being, by some empirical research,
         //    if we take over 50,000 English words (formed as the union of the word lists provided in two variants of Unix), 
-        //    using the constants 31, 33, 37, 39, and 41 will produce less than 7 collisions in each case, while creating a hasing function.
+        //    using the constants 31, 33, 37, 39, and 41 will produce less than 7 collisions in each case, while creating a hashing function.
         for (let i = 0; i < key.length; i++) {
             total += constant * total + key.charCodeAt(i)
         }
