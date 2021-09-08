@@ -41,7 +41,9 @@ class Node{
       return null
     }
     if(!this.head.next){
-        return this.head
+        let head = this.head
+        this.head = null
+        return head
     }
     const removedNode= this.head
     this.head= this.head.next
