@@ -1,3 +1,7 @@
+// Copyright Adewumi Sunkanmi Data structures Repository 
+// sunkanmiadewumi1@gmail.com
+// Available for anyone who wants to learn the Fenwick Tree Data Structure
+
 class FenwickTree {
     constructor() {
         // this will be our fenwick tree
