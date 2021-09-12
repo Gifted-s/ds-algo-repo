@@ -1,3 +1,7 @@
+// Copyright Adewumi Sunkanmi Data structures Repository 
+// sunkanmiadewumi1@gmail.com
+// Available for anyone who wants to learn the Stack Data Structure Implemetation using array
+
 class Stack{
     constructor(){
         this.items=[]

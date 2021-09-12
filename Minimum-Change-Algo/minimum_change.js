@@ -1,10 +1,12 @@
+// Copyright Adewumi Sunkanmi Data structures Repository 
+// sunkanmiadewumi1@gmail.com
 // Limited number of changes algorithm
 // changes allowed
 //insert
 //remove
 //delete
-// 0. check for the length of the strings,if the difference between the strings is more than i.e greater than 1 then we can actually return flse immediately
-// 1. convert string_to_check to hash,key is the char and value is the number of occurence
+// 0. check for the length of the strings,if the difference between the strings is more than i.e greater than 1 then we can actually return false immediately
+// 1. convert string_to_check to object,key is the char and value is the number of occurence
 // 2. check if each charcter of string is in string, 
 // 3. if char exist, reduce its number of occurence in string
 // 3. if a char exist in string and does not exist in string_to_check then increment no_of_change by 1

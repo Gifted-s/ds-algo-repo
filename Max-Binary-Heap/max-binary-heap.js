@@ -1,3 +1,7 @@
+// Copyright Adewumi Sunkanmi Data structures Repository 
+// sunkanmiadewumi1@gmail.com
+// Available for anyone who wants to learn the Max Binary Heap Data Structure
+
 const leftChild = (index) => (2 * index) + 1;
 const rightChild = (index) => (2 * index) + 2;
 const parentNode = (index) => Math.floor((index - 1) / 2)

@@ -29,23 +29,4 @@ function set_to_zero(matrix) {
   return matrix;
 }
 
-// let tracker =[]
-// function set_to_zero(matrix) {
-//     for (let i = 0; i < matrix.length; i++) {
-//       for (let j = 0; j < matrix[i].length; j++) {
-//         if (matrix[i][j] === 0) {
-//          tracker.push([i,j])
-//         }
-//       }
-//     }
-//     for(let m=0; m<tracker.length;m++){
-//         for(let k=0; k<matrix.length;k++){
-//             //set column to zero
-//            matrix[k][tracker[m][0]]=0
-//         //    matrix[tracker[m][1]]
-//         }
-//     }
-//     return matrix;
-//   }
-
 console.log(set_to_zero(input));

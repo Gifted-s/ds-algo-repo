@@ -1,4 +1,8 @@
-const  LinkedList =  require("./linked-list");
+// Copyright Adewumi Sunkanmi Data structures Repository 
+// sunkanmiadewumi1@gmail.com
+// Available for anyone who wants to learn the Queue Data Structure Implemetation using the linked list
+
+const  LinkedList =  require("../Linked-List/linked-list");
 
 
 class Queue{

@@ -1,4 +1,8 @@
+// Copyright Adewumi Sunkanmi Data structures Repository 
+// sunkanmiadewumi1@gmail.com
 // rotate an N*N matrix by 90 degrees
+
+
 let test_mat =
     [[4, 4, 4, 4, 4],
     [0, 0, 0, 0, 4],

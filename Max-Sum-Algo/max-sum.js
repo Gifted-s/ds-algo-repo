@@ -33,5 +33,3 @@ return result
 
 console.log(maxSum(nums))
 
-// Yes!!! I solved it :)
-

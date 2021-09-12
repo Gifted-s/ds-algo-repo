@@ -1,6 +1,6 @@
-const DoubleLinkedList = require("./doubly-linked-list");
-
-
+// Copyright Adewumi Sunkanmi Data structures Repository 
+// sunkanmiadewumi1@gmail.com
+// Available for anyone who wants to learn the Queue Data Structure Implemetation using array
 
 class Queue{
   constructor(){

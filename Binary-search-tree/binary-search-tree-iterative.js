@@ -1,3 +1,6 @@
+// Copyright Adewumi Sunkanmi Data structures Repository 
+// sunkanmiadewumi1@gmail.com
+// Available for anyone who wants to learn the Binary Search Tree Data Structure
 class Node {
     constructor(left, data, right) {
         this.left = left;

@@ -1,3 +1,6 @@
+// Copyright Adewumi Sunkanmi Data structures Repository 
+// sunkanmiadewumi1@gmail.com
+// Available for anyone who wants to learn the Linked List Data Structure
 class Node{
     constructor(data, next){
         this.data=data;
