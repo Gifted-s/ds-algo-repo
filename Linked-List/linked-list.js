@@ -48,6 +48,7 @@ class Node{
         this.head = null
         return head
     }
+
     const removedNode= this.head
     this.head= this.head.next
     this.length--
@@ -62,6 +63,7 @@ class Node{
     if(!this.head.next){
         return this.head
     }
+
     let currentNode=this.head
     const lastNode = this.getLast()
     while(currentNode.next !== lastNode){
@@ -104,7 +106,6 @@ class Node{
     if(index===0) {
         this.shift()
         return true
-
     }
     if(index<0 || index>this.length-1) return false
     const prevNode =  this.get(index-1)
@@ -117,7 +118,6 @@ class Node{
     if(index===0) {
         this.unshift(data)
         return true
-
     }
     if(index<0 || index>this.length-1) return false
     const prevNode =  this.get(index-1)

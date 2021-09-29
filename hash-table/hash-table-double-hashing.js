@@ -1,4 +1,4 @@
-// Copyright Adewumi Sunkanmi Data structures Repository 
+k// Copyright Adewumi Sunkanmi Data structures Repository 
 // sunkanmiadewumi1@gmail.com
 // Available for anyone who wants to learn the Hash Table  Data Structure using the  Double Hashing Method
 
