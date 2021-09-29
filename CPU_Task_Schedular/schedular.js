@@ -1,3 +1,4 @@
+// Adewumi Sunkanmi 2021
 const Queue = require("../Queue-Implentations/queue-from-array")
 const Stack = require("../Stack-Implementations/stack-from-array")
 const SCHEDULAR_TYPE = Object.freeze({
