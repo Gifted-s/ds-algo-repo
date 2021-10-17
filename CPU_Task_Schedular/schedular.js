@@ -67,7 +67,7 @@ class TaskStack {
     }
     getNextCPUTask() {
         return this.stack.pop()
-    }
+    } 
 }
 
 
@@ -120,47 +120,4 @@ class TaskPriorityQueue {
         }
     }
 }
-
-
-const schedular = new CPUSchedular(
-    [
-        {
-            priority: 10,
-            process: function () {
-                return 10
-            }
-        },
-        {
-            priority: 6,
-            process: function () {
-                return 6
-            }
-        },
-        {
-            priority: 31,
-            process: function () {
-                return 31
-            }
-        },
-        {
-            priority: 5,
-            process: function () {
-                return 5
-            }
-        },
-        {
-            priority: 9,
-            process: function () {     
-                return 9
-            }
-        },
-        {
-            priority: 7,
-            process: function () {
-                return 7
-            }
-        }
-    ],
-    SCHEDULAR_TYPE.PRIORITY
-)
 module.exports = CPUSchedular
