@@ -26,21 +26,24 @@ func (a *Array) IsEmpty() bool {
 	return a.Length == 0
 }
 
-func (a *Array) CheckBound(index int) bool {
+func (a *Array) IsOutOfBounds(index int) bool {
 	if index < 0 || index > a.Capacity {
-		log.Fatal("index is out of range")
+		return true
 	}
-	return true
+	return false
 }
 
 func (a *Array) Get(index int) int {
-	a.CheckBound(index)
+	if a.IsOutOfBounds(index) {
+		log.Fatal("index is out of bounds")
+	}
 	return a.Inner_Array[index]
-
 }
 
 func (a *Array) Set(index int, element int) bool {
-	a.CheckBound(index)
+	if a.IsOutOfBounds(index) {
+		log.Fatal("index is out of bounds")
+	}
 	a.Inner_Array[index] = element
 	return true
 }
@@ -71,7 +74,9 @@ func (a *Array) Add(element int) bool {
 }
 
 func (a *Array) RemoveAt(index int) int {
-	a.CheckBound(index)
+	if a.IsOutOfBounds(index) {
+		log.Fatal("index is out of bounds")
+	}
 	data_to_remove := a.Inner_Array[index]
 	new_array := make([]int, a.Length-1)
 	for i, j := 0, 0; i < a.Length; i, j = i+1, j+1 {
@@ -93,15 +98,15 @@ func (a *Array) IndexOf(element int) int {
 			return i
 		}
 	}
-	
+
 	return -1
 }
 
 func (a *Array) LastIndexOf(element int) int {
-	elementIndex:=-1;
+	elementIndex := -1
 	for i := 0; i < a.Length; i++ {
 		if a.Inner_Array[i] == element {
-			elementIndex=i
+			elementIndex = i
 		}
 	}
 	return elementIndex
