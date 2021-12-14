@@ -1,0 +1,28 @@
+{
+  "name": "ds-and-algo",
+  "version": "1.0.0",
+  "description": "## AUTHOR Adewumi Sunkanmi (Software Engineer)",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gifted-s/ds-algo-repo.git"
+  },
+  "keywords": [
+    "Data",
+    "structures",
+    "and",
+    "Algorithms"
+  ],
+  "author": "Adewumu Sunkanmi Adyodeji Daniel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gifted-s/ds-algo-repo/issues"
+  },
+  "homepage": "https://github.com/Gifted-s/ds-algo-repo#readme",
+  "dependencies": {
+    "jest": "^27.4.3"
+  }
+}

@@ -27,6 +27,7 @@ class ArrayDS {
             this.array[i] = null;
         }
         this.length = 0;
+        return true
     }
     add(element) {
         if (this.length + 1 > this.capacity) {
@@ -43,6 +44,7 @@ class ArrayDS {
             }
         }
         this.array[this.length++] = element
+        return true
     }
     removeAt(index_to_remove) {
         this.checkBound(index_to_remove);
@@ -71,14 +73,16 @@ class ArrayDS {
 }
 
 const array = new ArrayDS(2)
-array.add(1)
-array.add(2)
-array.add(3)
-array.add(4)
-array.add(5)
-array.add(6)
-console.log(array)
-array.removeAt(2)
-console.log(array)
-array.removeAt(0)
-console.log(array.contains(64))
+// array.add(1)
+// array.add(2)
+// array.add(3)
+// array.add(4)
+// array.add(5)
+// array.add(6)
+// console.log(array)
+// array.removeAt(2)
+// console.log(array)
+// array.removeAt(0)
+// console.log(array.contains(64))
+
+module.exports = ArrayDS
