@@ -2,13 +2,12 @@ package dynamic_array
 
 import (
 	"log"
-	// "reflect"
 )
 
 type Array struct {
-	Length      int
-	Capacity    int
-	Inner_Array []int
+	Length      int // the number of elements in the array
+	Capacity    int // the number of elements the array can contain
+	Inner_Array []int 
 }
 
 func (a *Array) Create(capacity int) bool {
@@ -49,8 +48,9 @@ func (a *Array) Set(index int, element int) bool {
 }
 
 func (a *Array) Clear() bool {
-	a.Inner_Array = a.Inner_Array[:0]
+	a.Inner_Array = make([]int, 2)
 	a.Length = 0
+	a.Capacity=2
 	return true
 }
 
@@ -74,6 +74,7 @@ func (a *Array) Add(element int) bool {
 }
 
 func (a *Array) RemoveAt(index int) int {
+	// index 3
 	if a.IsOutOfBounds(index) {
 		log.Fatal("index is out of bounds")
 	}
@@ -101,7 +102,6 @@ func (a *Array) IndexOf(element int) int {
 
 	return -1
 }
-
 func (a *Array) LastIndexOf(element int) int {
 	elementIndex := -1
 	for i := 0; i < a.Length; i++ {
