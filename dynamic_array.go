@@ -1,4 +1,4 @@
-package dynamic_array
+package main
 
 import (
 	"log"
@@ -74,7 +74,7 @@ func (a *Array) Add(element int) bool {
 }
 
 func (a *Array) RemoveAt(index int) int {
-	// index 3
+	
 	if a.IsOutOfBounds(index) {
 		log.Fatal("index is out of bounds")
 	}
