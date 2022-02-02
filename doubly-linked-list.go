@@ -190,16 +190,11 @@ func (list *DoublyLinkedList) RemoveAt(index int) int {
 }
 
 
-//check the value of the last node if it exists, 0(1)
+//check the value at a particular node, 0(n)
 func (list *DoublyLinkedList) Get(index int) int {
 	// check the index range and make sure its valid
 	if !list.IndexValid(index) {
 		log.Fatal("Illegal Argument: Index is not within range")
-	}
-	// the linked list is empty
-	if list.IsEmpty() {
-		log.Fatal("Empty List")
-		return 0
 	}
 	// this will point to the address of the node we want to peek
 	var node *Node
