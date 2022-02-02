@@ -1,4 +1,4 @@
-module dynamic_array
+module doubly-linked-list
 
 go 1.17
 
