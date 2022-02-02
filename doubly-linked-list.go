@@ -264,7 +264,7 @@ func (list *DoublyLinkedList) ToString() string {
 	trav := list.head
 	for trav != nil {
 		if trav.next != nil {
-			list_to_string += strconv.Itoa(trav.data) + "->"
+			list_to_string += strconv.Itoa(trav.data) + "<->"
 		} else {
 			list_to_string += strconv.Itoa(trav.data)
 		}
