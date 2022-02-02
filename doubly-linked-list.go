@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"strconv"
 )
@@ -275,17 +274,3 @@ func (list *DoublyLinkedList) ToString() string {
 	return list_to_string
 }
 
-func main() {
-	list := DoublyLinkedList{}
-	list.AddFirst(5)
-	list.AddFirst(3)
-	list.AddFirst(7)
-	list.AddFirst(1)
-	list.Clear()
-	list.Add(9)
-	list.Add(2)
-	list.Add(6)
-	list.Add(8)
-	fmt.Println(list.Get(3))
-	fmt.Println(list.ToString())
-}
