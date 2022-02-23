@@ -1,4 +1,4 @@
-module doubly-linked-list
+module ds
 
 go 1.17
 

@@ -1,10 +1,9 @@
-package main
+package sl
 
 import (
 	"fmt"
 	"log"
 )
-
 type SinglyLinkedList struct {
 	size int
 	head *Node
@@ -208,8 +207,4 @@ func (list *SinglyLinkedList) PrintList() {
 	}
 }
 
-func main() {
-	list := &SinglyLinkedList{}
-	list.Add(3)
-	fmt.Println(list.Contains(3))
-}
+
