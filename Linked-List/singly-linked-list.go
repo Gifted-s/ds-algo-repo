@@ -3,6 +3,7 @@ package sl
 import (
 	"fmt"
 	"log"
+	"errors"
 )
 type SinglyLinkedList struct {
 	size int
@@ -136,6 +137,15 @@ func (list *SinglyLinkedList) Get(index int) int {
 	}
 	return trav.data
 }
+
+// check element at the front of the queue
+func (list *SinglyLinkedList) PeekFirst() (int, error) {
+	if list.IsEmpty() {
+		return 0 , errors.New("list is empty")
+	}
+	return list.head.data, nil
+}
+
 
 // remove element at a particular position 0(n)
 func (list *SinglyLinkedList) Remove(index int) int {
