@@ -11,7 +11,6 @@ class Queue{
   }
 
   enqueue(data){
-
     this.items.unshift(data)
     return true
   }
