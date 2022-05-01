@@ -3,7 +3,7 @@
 
 // An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
 
- 
+
 
 // Example 1:
 
@@ -19,31 +19,37 @@
 // Output: [["a"]]
 
 /**
- * @param {string} s
- * @param {string} t
- * @return {boolean}
+ * @param {string[]} strs
+ * @return {string[][]}
  */
- var isAnagram = function(s, t) {
-    if(s.length !== t.length){
-        return false
+var groupAnagrams = function (strs) {
+    if (strs.length == 1 && strs[0] === "") {
+        return [[""]]
     }
-    const stringMap= {}
-    for(let i of s){
-      if(stringMap[i]){
-         stringMap[i] += 1
-      }
-      else{
-           stringMap[i] = 1
-      }
-    }
-    
-    for(let i of t){
-        if(stringMap[i]){
-            stringMap[i] -= 1
-        }
-        else{
-            return false
+    else {
+        if (strs.length == 1) {
+            return [[strs[0]]]
         }
     }
-  return true
+
+    const resultMap = {}
+    for (let str of strs) {
+        const hash = new Array(26).fill(0)
+        const current = str.split("")
+        for (let k of current) {
+            hash[k.charCodeAt(0) - "a".charCodeAt(0)] += 1
+        }
+        if (resultMap[hash]) {
+            resultMap[hash].push(str)
+        }
+        else {
+            resultMap[hash] = [str]
+        }
+    }
+
+    return Object.values(resultMap)
 };
+
+
+
+
