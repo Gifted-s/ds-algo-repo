@@ -57,6 +57,7 @@
           ){
             return false
         }
+        // stringify this path because JavaScript Set will only store the memory address of array therefore you won't be able to get it back so stringify it to make it a string.  
         path.add([r,c].toString())
        let result = (
                     dfs(r-1,c, i+1) ||
