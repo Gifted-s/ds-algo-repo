@@ -26,7 +26,6 @@
 // ]
 // Output: 3
 
-
 /**
  * @param {character[][]} grid
  * @return {number}
@@ -50,24 +49,24 @@
             let downDir = [r+1, c]
             let leftDir = [r, c-1]
             let upDir = [r-1,c]
-            if(rightDir[0] < rows  && rightDir[1] < cols && rightDir[1] >= 0  && rightDir[0]>= 0 && !visited.has([rightDir[0], rightDir[1]].toString()) && grid[r][c] === "1" ){
+            if(rightDir[0] < rows  && rightDir[1] < cols && rightDir[1] >= 0  && rightDir[0]>= 0 && !visited.has([rightDir[0], rightDir[1]].toString()) && grid[rightDir[0]][rightDir[1]] === "1" ){
                     visited.add([rightDir[0],rightDir[1]].toString())
                     queue.push(rightDir)
                 
             }
-            if(downDir[0] < rows && downDir[1] < cols  && downDir[1] >= 0  && downDir[0]>= 0  && !visited.has([downDir[0], downDir[1]].toString()) && grid[r][c] === "1" ){
+            if(downDir[0] < rows && downDir[1] < cols  && downDir[1] >= 0  && downDir[0]>= 0  && !visited.has([downDir[0], downDir[1]].toString()) && grid[downDir[0]][downDir[1]] === "1" ){
                
                     visited.add([downDir[0],downDir[1]].toString())
                     queue.push(downDir)
                 
             }
-            if(leftDir[0] < rows && leftDir[1] < cols && leftDir[1] >= 0  && leftDir[0]>= 0 && !visited.has([leftDir[0], leftDir[1]].toString()) && grid[r][c] === "1" ){
+            if(leftDir[0] < rows && leftDir[1] < cols && leftDir[1] >= 0  && leftDir[0]>= 0 && !visited.has([leftDir[0], leftDir[1]].toString()) && grid[leftDir[0]][leftDir[1]] === "1" ){
                 
                     visited.add([leftDir[0],leftDir[1]].toString())
                     queue.push(leftDir)
                 
             }
-            if(upDir[0] < rows && upDir[1] < cols && upDir[1] >= 0  && upDir[0]>= 0 && !visited.has([upDir[0], upDir[1]].toString()) && grid[r][c] === "1" ){
+            if(upDir[0] < rows && upDir[1] < cols && upDir[1] >= 0  && upDir[0]>= 0 && !visited.has([upDir[0], upDir[1]].toString()) && grid[upDir[0]][upDir[1]] === "1" ){
                 
                     visited.add([upDir[0],upDir[1]].toString())
                     queue.push(upDir)
