@@ -1,3 +1,6 @@
+// Adewumi Sunkanmi 2022
+// Leetcode 269(Premium)
+
 function alienOrder(words) {
     // Write your code here
     let adjList = {}
