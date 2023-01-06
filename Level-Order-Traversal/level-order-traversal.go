@@ -46,31 +46,26 @@ package levelordertraversal
  } 
  
  func levelOrder(root *TreeNode) [][]int {
-	if root== nil {
-	   return [][]int{}
-   }
-   result := [][]int{}
-   queue := []*TreeNode{root}
-   for len(queue) >0 {
-	   level :=[]int{}
-	   n := len(queue)
-	   for i:=0; i<n; i++ {
-		   node, updatedQueue := shift(queue)
-		   queue = updatedQueue
-		   if node != nil {
-			   level = append(level, node.Val)
-			   queue = append(queue, node.Left)
-			   queue = append(queue, node.Right)
-			  }
-	   }       
-	   if len(level) >0 {
-		   result = append(result, level)
-	   }
-   }
-	return result 
-}
-
-func shift(a []*TreeNode)(*TreeNode, []*TreeNode){
-   x, a := a[0], a[1:];
-   return x,a
+    queue:= []*TreeNode{root};
+    result := [][]int{};
+    
+    for len(queue) >0{
+        queueLength := len(queue);
+        children := []int{};
+        for i:=0; i< queueLength;i++{
+            node:= queue[0]
+            queue=queue[1:];
+            if node != nil{
+                children = append(children, node.Val);
+                queue = append(queue, node.Left);
+                queue = append(queue, node.Right);
+            }
+        }
+        if len(children)>0{
+             result = append(result, children);
+        }
+       
+    }
+    
+    return result;
 }

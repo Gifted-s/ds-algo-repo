@@ -45,17 +45,20 @@ import (
      Right *TreeNode
   }
 
-func isBalanced(root *TreeNode) bool {
+  func isBalanced(root *TreeNode) bool {
+    
+    var dfs func(node *TreeNode)(bool, int)
+    
+    dfs = func(node *TreeNode)(bool, int){
+        if node == nil{
+            return true, 0;
+        }
+        
+        leftBalanced, leftHeight:=dfs(node.Left) 
+        rightBalanced, rightHeight:=dfs(node.Right)
+        balanced := leftBalanced && rightBalanced && int(math.Abs(float64(leftHeight)-float64(rightHeight))) <= 1
+        return balanced, 1 + int(math.Max(float64(leftHeight), float64(rightHeight)))
+    }
     balanced, _ := dfs(root)
     return balanced
 }
-func dfs(root *TreeNode) (bool, int){
-        if root==nil {
-            return true, 0
-        }
-        leftBalanced, leftHeight := dfs(root.Left);
-        rightBalanced, rightHeight:= dfs(root.Right);
-        balanced := ( leftBalanced && rightBalanced && (math.Abs(float64(leftHeight) - float64(rightHeight)) <=1)  )
-    return balanced, 1+ int(math.Max(float64(leftHeight), float64(rightHeight)))
-}
-    

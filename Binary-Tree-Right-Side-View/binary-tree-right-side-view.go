@@ -34,29 +34,25 @@ package binarytreerightsideview
  }
 
  func rightSideView(root *TreeNode) []int {
+    queue:= []*TreeNode{root};
+    result := []int{};
     
-    result := []int{}
-    queue := []*TreeNode{root}
-    for len(queue) >0 {
-        var rightMostNode *TreeNode;
-        n := len(queue)
-        for i:=0; i<n; i++ {
-            node, updatedQueue := shift(queue)
-            queue = updatedQueue
-            if node != nil {
-                rightMostNode= node
-                queue = append(queue, node.Left)
-                queue = append(queue, node.Right)
-               }
-        }       
-        if rightMostNode != nil {
-            result = append(result, rightMostNode.Val)
+    for len(queue) >0{
+        queueLength := len(queue);
+        var rightNode *TreeNode
+        for i:=0; i< queueLength;i++{
+            node:= queue[0]
+            queue=queue[1:];
+            if node != nil{
+                rightNode=node;
+                queue = append(queue, node.Left);
+                queue = append(queue, node.Right);
+            }
+        }
+        if rightNode!=nil{
+             result = append(result, rightNode.Val);
         }
     }
-     return result 
-}
-
-func shift(a []*TreeNode)(*TreeNode, []*TreeNode){
-    x, a := a[0], a[1:];
-    return x,a
+    
+    return result;
 }
