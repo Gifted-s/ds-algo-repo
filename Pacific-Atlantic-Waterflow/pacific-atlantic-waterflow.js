@@ -28,9 +28,6 @@
 // n == heights[r].length
 // 1 <= m, n <= 200
 // 0 <= heights[r][c] <= 105
-// Accepted
-// 218.4K
-// Submissions
 
 
 

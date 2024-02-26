@@ -1,6 +1,6 @@
 // Copyright Adewumi Sunkanmi Data structures Repository 
 // sunkanmiadewumi1@gmail.com
-// Available for anyone who wants to learn how to use the stack to valiate brackets
+// Available for anyone who wants to learn how to use the stack to validate brackets
 const Stack = require("../Stack-Implementations/stack-from-double-linked-list")
 // key (bracket): value (reverse bracket) 
 const bracketsMap = {

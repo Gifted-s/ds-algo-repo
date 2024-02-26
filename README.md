@@ -1,7 +1,7 @@
 # FUNDAMENTAL DATA STRUCTURES AND ALGORITHMS FOR EVERY SOFTWARE ENGINEER
 
 ## AUTHOR
-Adewumi Sunkanmi (Software Engineer) 
+Adewumi Sunkanmi (Senior Software Engineer) 
 
 ## PREFACE
 This Repository contains the fundamental  data structures and algorithms you need to know as a computer scientist.
