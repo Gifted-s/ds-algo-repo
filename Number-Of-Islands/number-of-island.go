@@ -1,12 +1,11 @@
 package numberofislands
+
 // Adewumi Sunkanmi 2024
 // 200. Number of Islands
 // Medium
 // Given an m x n 2D binary grid grid which represents a map of '1's (land) and '0's (water), return the number of islands.
 
 // An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
-
- 
 
 // Example 1:
 
@@ -27,48 +26,90 @@ package numberofislands
 // ]
 // Output: 3
 
+// func numIslands(grid [][]byte) int {
+// 	rows := len(grid)
+// 	cols := len(grid[0])
+// 	visited := make([][]bool, rows)
+// 	for i := range visited {
+// 		visited[i] = make([]bool, cols)
+// 	}
+// 	noOfIslands := 0
+
+// 	var bfs func(r int, c int)
+// 	bfs = func(r int, c int) {
+// 		queue := [][]int{{r, c}} // store postion
+// 		for len(queue) > 0 {
+// 			queueLength := len(queue)
+
+// 			for i := 0; i < queueLength; i++ {
+// 				r := queue[i][0]
+// 				c := queue[i][1]
+// 				if r < 0 || c < 0 || c >= cols || r >= rows || visited[r][c] || string(grid[r][c]) == "0" {
+// 					continue
+// 				} else {
+// 					queue = append(queue, []int{r + 1, c})
+// 					queue = append(queue, []int{r - 1, c})
+// 					queue = append(queue, []int{r, c + 1})
+// 					queue = append(queue, []int{r, c - 1})
+
+// 					visited[r][c] = true
+// 				}
+
+// 			}
+// 			queue = queue[queueLength:]
+// 		}
+// 	}
+
+// 	for i := 0; i < rows; i++ {
+// 		for j := 0; j < cols; j++ {
+// 			if !visited[i][j] && string(grid[i][j]) == "1" {
+// 				noOfIslands++
+// 				bfs(i, j)
+// 			}
+// 		}
+// 	}
+
+// 	return noOfIslands
+// }
+
+// Updated solution May 6 2024
 func numIslands(grid [][]byte) int {
-	rows := len(grid)
-	cols := len(grid[0])
-	visited := make([][]bool, rows)
+	ROW := len(grid)
+	COL := len(grid[0])
+	visited := make([][]bool, ROW)
+	count := 0
 	for i := range visited {
-		visited[i] = make([]bool, cols)
+		visited[i] = make([]bool, COL)
 	}
-	noOfIslands := 0
 
-	var bfs func(r int, c int)
-	bfs = func(r int, c int) {
-		queue := [][]int{{r, c}} // store postion
-		for len(queue) > 0 {
+	var bfs func(r, c int)
+	bfs = func(r, c int) {
+		queue := [][]int{{r, c}}
+		for len(queue) != 0 {
 			queueLength := len(queue)
-
-			for i := 0; i < queueLength; i++ {
+			for i := range queue {
 				r := queue[i][0]
 				c := queue[i][1]
-				if r < 0 || c < 0 || c >= cols || r >= rows || visited[r][c] || string(grid[r][c]) == "0" {
+				if r < 0 || c < 0 || c >= COL || r >= ROW || grid[r][c] != '1' || visited[r][c] {
 					continue
-				} else {
-					queue = append(queue, []int{r + 1, c})
-					queue = append(queue, []int{r - 1, c})
-					queue = append(queue, []int{r, c + 1})
-					queue = append(queue, []int{r, c - 1})
-
-					visited[r][c] = true
 				}
-
+				queue = append(queue, []int{r - 1, c})
+				queue = append(queue, []int{r + 1, c})
+				queue = append(queue, []int{r, c - 1})
+				queue = append(queue, []int{r, c + 1})
+				visited[r][c] = true
 			}
 			queue = queue[queueLength:]
 		}
 	}
 
-	for i := 0; i < rows; i++ {
-		for j := 0; j < cols; j++ {
-			if !visited[i][j] && string(grid[i][j]) == "1" {
-				noOfIslands++
-				bfs(i, j)
+	for r := 0; r < ROW; r++ {
+		for c := 0; c < COL; c++ {
+			if !visited[r][c] && grid[r][c] == '1' {
+				count++
+				bfs(r, c)
 			}
 		}
 	}
-
-	return noOfIslands
+	return count
 }
