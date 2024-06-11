@@ -3,14 +3,6 @@ package happynumber
 import "math"
 // 202. Happy Number
 // Easy
-
-// 6095
-
-// 771
-
-// Add to List
-
-// Share
 // Write an algorithm to determine if a number n is happy.
 
 // A happy number is a number defined by the following process:

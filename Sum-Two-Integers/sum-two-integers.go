@@ -3,16 +3,7 @@ package sumtwointegers
 // 371. Sum of Two Integers
 // Medium
 
-// 2756
-
-// 4067
-
-// Add to List
-
-// Share
 // Given two integers a and b, return the sum of the two integers without using the operators + and -.
-
- 
 
 // Example 1:
 

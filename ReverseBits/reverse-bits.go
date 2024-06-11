@@ -4,14 +4,6 @@ package reversebits
 
 // 190. Reverse Bits
 // Easy
-
-// 3352
-
-// 865
-
-// Add to List
-
-// Share
 // Reverse bits of a given 32 bits unsigned integer.
 
 // Note:

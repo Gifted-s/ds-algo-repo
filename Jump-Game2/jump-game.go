@@ -3,14 +3,6 @@ package jumpgame2
 import "math"
 // 45. Jump Game II
 // Medium
-
-// 8771
-
-// 317
-
-// Add to List
-
-// Share
 // Given an array of non-negative integers nums, you are initially positioned at the first index of the array.
 
 // Each element in the array represents your maximum jump length at that position.

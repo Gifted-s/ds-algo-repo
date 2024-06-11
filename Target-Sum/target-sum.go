@@ -6,13 +6,6 @@ import "strconv"
 // 494. Target Sum
 // Medium
 
-// 7445
-
-// 273
-
-// Add to List
-
-// Share
 // You are given an integer array nums and an integer target.
 
 // You want to build an expression out of nums by adding one of the symbols '+' and '-' before each integer in nums and then concatenate all the integers.

@@ -1,4 +1,4 @@
-// Copyright Adewumi Sunkanmi Data structures Repository 
+// Adewumi Sunkanmi Data structures Repository 
 // Available for anyone who wants to learn the union find Data Structure
 class UnionFind {
     constructor(size) {

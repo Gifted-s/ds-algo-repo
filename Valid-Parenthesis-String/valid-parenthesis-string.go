@@ -1,14 +1,6 @@
 package validprenthesisstring
 // 678. Valid Parenthesis String
 // Medium
-
-// 3602
-
-// 89
-
-// Add to List
-
-// Share
 // Given a string s containing only three types of characters: '(', ')' and '*', return true if s is valid.
 
 // The following rules define a valid string:

@@ -4,13 +4,6 @@ package missingnumbers
 // 268. Missing Number
 // Easy
 
-// 6672
-
-// 2932
-
-// Add to List
-
-// Share
 // Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
 
  

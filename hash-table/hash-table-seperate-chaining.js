@@ -1,5 +1,4 @@
-// Copyright Adewumi Sunkanmi Data structures Repository 
-// sunkanmiadewumi1@gmail.com
+// Adewumi Sunkanmi Data structures Repository 
 // Available for anyone who wants to learn the Hash Table  Data Structure using the Seperate Chaining Method
 const LinkedList = require("../Linked-List/linked-list")
 // Entry class to create any new entry

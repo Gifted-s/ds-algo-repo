@@ -1,14 +1,6 @@
 // Copright Adewumi Sunkanmi 2022
 // 287. Find the Duplicate Number
 // Medium
-
-// 14179
-
-// 1716
-
-// Add to List
-
-// Share
 // Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.
 
 // There is only one repeated number in nums, return this repeated number.

@@ -1,4 +1,4 @@
-// Copyright Adewumi Sunkanmi 2022
+// Adewumi Sunkanmi 2022
 // 33. Search in Rotated Sorted Array
 // Medium
 

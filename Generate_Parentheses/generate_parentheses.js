@@ -1,14 +1,6 @@
 // Copyright Adewumi Sunkanmi 2022
 // 22. Generate Parentheses
 // Medium
-
-// 12761
-
-// 491
-
-// Add to List
-
-// Share
 // Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
 
  

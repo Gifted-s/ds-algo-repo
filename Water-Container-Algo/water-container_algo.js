@@ -1,5 +1,4 @@
-// Copyright Adewumi Sunkanmi Data structures Repository 
-// sunkanmiadewumi1@gmail.com
+// Adewumi Sunkanmi Data structures Repository 
 
 /**
  * @param {number[]} height

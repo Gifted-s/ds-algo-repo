@@ -1,5 +1,4 @@
-// Copyright Adewumi Sunkanmi Data structures Repository 
-// sunkanmiadewumi1@gmail.com
+// Adewumi Sunkanmi Data structures Repository 
 // Available for anyone who wants to learn the Stack Data Structure Implemetation using doubly linked list
 
 const DoubleLinkedList   =  require('../Doubly-Linked-List/doubly-linked-list');

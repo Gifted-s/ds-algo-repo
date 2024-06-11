@@ -2,13 +2,6 @@
 // 143. Reorder List
 // Medium
 
-// 5942
-
-// 217
-
-// Add to List
-
-// Share
 // You are given the head of a singly linked-list. The list can be represented as:
 
 // L0 → L1 → … → Ln - 1 → Ln

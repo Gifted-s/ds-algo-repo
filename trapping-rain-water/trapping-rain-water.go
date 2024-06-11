@@ -3,17 +3,7 @@ package trappingrainwater
 import "math"
 // 42. Trapping Rain Water
 // Hard
-
-// 21577
-
-// 293
-
-// Add to List
-
-// Share
 // Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.
-
- 
 
 // Example 1:
 

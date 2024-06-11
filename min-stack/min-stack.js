@@ -1,14 +1,6 @@
 // Copyright Adewumi Sunkanmi 2022
 // 155. Min Stack
 // Easy
-
-// 7985
-
-// 617
-
-// Add to List
-
-// Share
 // Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
 
 // Implement the MinStack class:

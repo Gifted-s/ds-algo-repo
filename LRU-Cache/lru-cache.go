@@ -4,13 +4,6 @@ package lrucache
 // 146. LRU Cache
 // Medium
 
-// 13409
-
-// 537
-
-// Add to List
-
-// Share
 // Design a data structure that follows the constraints of a Least Recently Used (LRU) cache.
 
 // Implement the LRUCache class:

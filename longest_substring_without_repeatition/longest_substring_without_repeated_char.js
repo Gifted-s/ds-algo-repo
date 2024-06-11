@@ -2,13 +2,6 @@
 // 3. Longest Substring Without Repeating Characters
 // Medium
 
-// 23399
-
-// 1053
-
-// Add to List
-
-// Share
 // Given a string s, find the length of the longest substring without repeating characters.
 
  

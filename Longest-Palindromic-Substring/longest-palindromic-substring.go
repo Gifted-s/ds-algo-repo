@@ -5,13 +5,6 @@ package longestpalindromicsubstring
 // 5. Longest Palindromic Substring
 // Medium
 
-// 19694
-
-// 1136
-
-// Add to List
-
-// Share
 // Given a string s, return the longest palindromic substring in s.
 
  

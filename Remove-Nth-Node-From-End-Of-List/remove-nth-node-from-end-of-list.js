@@ -1,4 +1,4 @@
-// Copyright Adewumi Sunkanmi 2022
+//  Adewumi Sunkanmi 2022
 // 19. Remove Nth Node From End of List
 // Medium
 

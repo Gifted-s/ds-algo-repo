@@ -1,13 +1,6 @@
 // Adewumi Sunkanmi 2022
 // 211. Design Add and Search Words Data Structure
 // Medium
-
-// 5016
-
-// 239
-
-// Add to List
-
 // Share
 // Design a data structure that supports adding new words and finding if a string matches any previously added string.
 

@@ -5,13 +5,6 @@ package palindromicsubstring
 // 647. Palindromic Substrings
 // Medium
 
-// 7496
-
-// 164
-
-// Add to List
-
-// Share
 // Given a string s, return the number of palindromic substrings in it.
 
 // A string is a palindrome when it reads the same backward as forward.

@@ -3,7 +3,7 @@ package balancedbinarytree
 import (
     "math"
 )
-// Adewumi Sunkanmi copyright 2022
+// Adewumi Sunkanmi 2022
 // 110. Balanced Binary Tree
 // Easy
 

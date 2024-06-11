@@ -4,14 +4,6 @@ package maxsubarray
 import "math"
 // 53. Maximum Subarray
 // Medium
-
-// 22851
-
-// 1113
-
-// Add to List
-
-// Share
 // Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
 
 // A subarray is a contiguous part of an array.

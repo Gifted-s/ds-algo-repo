@@ -1,9 +1,7 @@
 // Adewumi Sunkanmi 2022
 // 127. Word Ladder
 // Hard
-// Add to List
 
-// Share
 // A transformation sequence from word beginWord to word endWord using a dictionary wordList is a sequence of words beginWord -> s1 -> s2 -> ... -> sk such that:
 
 // Every adjacent pair of words differs by a single letter.

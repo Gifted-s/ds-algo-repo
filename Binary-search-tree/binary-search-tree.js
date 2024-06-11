@@ -1,5 +1,4 @@
 // Copyright Adewumi Sunkanmi Data structures Repository 
-// sunkanmiadewumi1@gmail.com
 // Available for anyone who wants to learn the Binary Search Tree Data Structure
 const Queue = require("../Queue-Implentations/queue-from-array");
 

@@ -2,13 +2,6 @@
 // 73. Set Matrix Zeroes
 // Medium
 
-// 8187
-
-// 522
-
-// Add to List
-
-// Share
 // Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0's.
 
 // You must do it in place.

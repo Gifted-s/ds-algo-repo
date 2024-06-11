@@ -1,5 +1,4 @@
-// Copyright Adewumi Sunkanmi Data structures Repository 
-// sunkanmiadewumi1@gmail.com
+// Adewumi Sunkanmi Data structures Repository 
 // Available for anyone who wants to learn the Doubly Linked List Data Structure
 class Node {
     constructor(previous, data, next) {

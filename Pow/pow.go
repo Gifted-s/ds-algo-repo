@@ -4,17 +4,7 @@ import "math"
 
 // 50. Pow(x, n)
 // Medium
-
-// 5136
-
-// 5908
-
-// Add to List
-
-// Share
 // Implement pow(x, n), which calculates x raised to the power n (i.e., xn).
-
- 
 
 // Example 1:
 

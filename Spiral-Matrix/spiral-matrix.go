@@ -4,16 +4,7 @@ package spiralmatrix
 // 54. Spiral Matrix
 // Medium
 
-// 8014
-
-// 875
-
-// Add to List
-
-// Share
 // Given an m x n matrix, return all elements of the matrix in spiral order.
-
- 
 
 // Example 1:
 

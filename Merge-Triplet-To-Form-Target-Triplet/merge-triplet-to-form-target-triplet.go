@@ -5,13 +5,6 @@ package mergetriplettoformtargettriplet
 // 1899. Merge Triplets to Form Target Triplet
 // Medium
 
-// 363
-
-// 28
-
-// Add to List
-
-// Share
 // A triplet is an array of three integers. You are given a 2D integer array triplets, where triplets[i] = [ai, bi, ci] describes the ith triplet. You are also given an integer array target = [x, y, z] that describes the triplet you want to obtain.
 
 // To obtain target, you may apply the following operation on triplets any number of times (possibly zero):
