@@ -54,8 +54,6 @@
  * @return {Node}
  */
 var copyRandomList = function (head) {
-    // Don't use a Javascript Object here, use the Map Constructor. You can't map a pointer to a value 
-    // in a Javascript Object but you can map a pointer to a value in a Map Constructor
     let oldToCopyMap = new Map();
     oldToCopyMap.set(null, null);
     let cur = head;
