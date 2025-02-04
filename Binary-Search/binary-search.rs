@@ -2,10 +2,7 @@
 use std::cmp::Ordering;
 use std::time::Instant;
 fn main() {
-    let mut sample: Vec<i64> = Vec::new();
-    for i in 0..1000000000 {
-        sample.push(i);
-    }
+    let sample: Vec<i64> = (0..845459489).collect();
 
     println!("                                           ");
     // Linear scan is faster than Binary scan in this case :)
