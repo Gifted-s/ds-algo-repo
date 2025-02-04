@@ -28,10 +28,6 @@ package levelordertraversal
 // -1000 <= Node.val <= 1000
 
 
-
-
-
-
   type TreeNode struct {
       Val int
       Left *TreeNode
