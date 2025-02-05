@@ -1,46 +1,6 @@
 // Just having fun with search algorithms today :) Tuesday Feb 4, 2025
 use std::cmp::Ordering;
 use std::time::Instant;
-fn main() {
-    let sample: Vec<i64> = (0..845459489).collect();
-
-    println!("                                           ");
-    // Linear scan is faster than Binary scan in this case :)
-    let _b_response = search(SearchType::Binary, &sample, 10, binary_search);
-    let _l_response = search(SearchType::Linear, &sample, 10, linear_search);
-    println!("                                           ");
-    // Binary scan is faster than Linear scan in this case :)
-    let _b_response = search(SearchType::Binary, &sample, 545459489, binary_search);
-    let _l_response = search(SearchType::Linear, &sample, 545459489, linear_search);
-    println!("                                           ");
-    // Binary scan is faster than Linear scan in this case :)
-    let _b_response = search(SearchType::Binary, &sample, 78459489, binary_search);
-    let _l_response = search(SearchType::Linear, &sample, 78459489, linear_search);
-
-    //     OUTPUT 1
-    //     =====================================
-    //     -> Binary Algorithm
-    //     -> Runtime: 197.708µs
-    //     =====================================
-    //     -> Linear Algorithm
-    //     -> Runtime: 458ns
-
-    //     OUTPUT 2
-    //     =====================================
-    //     -> Binary Algorithm
-    //     -> Runtime: 480.083µs
-    //     =====================================
-    //     -> Linear Algorithm
-    //     -> Runtime: 7.041808417s
-
-    //    OUTPUT 3
-    //     =====================================
-    //     -> Binary Algorithm
-    //     -> Runtime: 127.667µs
-    //     =====================================
-    //     -> Linear Algorithm
-    //     -> Runtime: 1.043443125s
-}
 
 #[derive(Debug)]
 enum SearchType {
@@ -96,4 +56,45 @@ fn linear_search<T: Ord>(set: &Vec<T>, search_param: T) -> bool {
         }
     }
     false
+}
+
+fn main() {
+    let sample: Vec<i64> = (0..845459489).collect();
+
+    println!("                                           ");
+    // Linear scan is faster than Binary scan in this case :)
+    let _b_response = search(SearchType::Binary, &sample, 10, binary_search);
+    let _l_response = search(SearchType::Linear, &sample, 10, linear_search);
+    println!("                                           ");
+    // Binary scan is faster than Linear scan in this case :)
+    let _b_response = search(SearchType::Binary, &sample, 545459489, binary_search);
+    let _l_response = search(SearchType::Linear, &sample, 545459489, linear_search);
+    println!("                                           ");
+    // Binary scan is faster than Linear scan in this case :)
+    let _b_response = search(SearchType::Binary, &sample, 78459489, binary_search);
+    let _l_response = search(SearchType::Linear, &sample, 78459489, linear_search);
+
+    //     OUTPUT 1
+    //     =====================================
+    //     -> Binary Algorithm
+    //     -> Runtime: 197.708µs
+    //     =====================================
+    //     -> Linear Algorithm
+    //     -> Runtime: 458ns
+
+    //     OUTPUT 2
+    //     =====================================
+    //     -> Binary Algorithm
+    //     -> Runtime: 480.083µs
+    //     =====================================
+    //     -> Linear Algorithm
+    //     -> Runtime: 7.041808417s
+
+    //    OUTPUT 3
+    //     =====================================
+    //     -> Binary Algorithm
+    //     -> Runtime: 127.667µs
+    //     =====================================
+    //     -> Linear Algorithm
+    //     -> Runtime: 1.043443125s
 }
