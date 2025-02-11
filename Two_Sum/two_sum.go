@@ -21,23 +21,14 @@ package twosum
 // Output: [0,1]
 
 func twoSum(nums []int, target int) []int {
-	if len(nums) == 0 {
-		return []int{}
-	}
-	result := []int{}
-	numMap := map[int]int{}
-	for i := range nums {
-		numMap[nums[i]] = i
-	}
-
-	for j := 0; j < len(nums); j++ {
-		value, exists := numMap[target-nums[j]]
-		if exists {
-			if value != j {
-				result = []int{j, value}
-			}
-		}
-
-	}
-	return result
+    compositeMap := make(map[int]int)
+    result:= []int{}
+    for idx, num := range nums {
+        if pos, exist := compositeMap[target-num]; exist {
+         return []int{idx, pos}
+        }else{
+            compositeMap[num] = idx
+        }
+    }
+    return result
 }
