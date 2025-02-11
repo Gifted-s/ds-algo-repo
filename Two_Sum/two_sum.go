@@ -21,13 +21,13 @@ package twosum
 // Output: [0,1]
 
 func twoSum(nums []int, target int) []int {
-    compositeMap := make(map[int]int)
+    complementMap := make(map[int]int)
     result:= []int{}
     for idx, num := range nums {
-        if pos, exist := compositeMap[target-num]; exist {
+        if pos, exist := complementMap[target-num]; exist {
          return []int{idx, pos}
         }else{
-            compositeMap[num] = idx
+            complementMap[num] = idx
         }
     }
     return result
