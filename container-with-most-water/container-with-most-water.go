@@ -1,7 +1,5 @@
 package containerwithmostwater
 
-import "math"
-
 // You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).
 
 // Find two lines that together with the x-axis form a container, such that the container contains the most water.
@@ -19,22 +17,23 @@ import "math"
 
 // Input: height = [1,1]
 // Output: 1
- 
 
 func maxArea(height []int) int {
-    maxA := 0;
-    l := 0;
-    r := len(height) -1;
-    
-    for l < r{
-      maxA =int(math.Max(float64(maxA), float64(height[l] * height[r])));
-      if height[l] <  height[r]{
-          l+=1;
-      }else if height[l] >  height[r]{
-        r-=1;
-      }else{
-          l+=1;
-      }
-    }
-    return maxA;
+	l := 0
+	r := len(height) - 1
+	maxArea := 0
+	for l < r {
+		area := 1
+		if height[l] >= height[r] {
+			area = height[r] * (r - l)
+			r--
+		} else {
+			area = height[l] * (r - l)
+			l++
+		}
+		if area > maxArea {
+			maxArea = area
+		}
+	}
+	return maxArea
 }
