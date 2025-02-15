@@ -1,4 +1,5 @@
 package findminimuminrotatedsortedarray
+
 // Adewumi Sunkanmi 2024
 // 153. Find Minimum in Rotated Sorted Array
 // Medium
@@ -12,8 +13,6 @@ package findminimuminrotatedsortedarray
 // Given the sorted rotated array nums of unique elements, return the minimum element of this array.
 
 // You must write an algorithm that runs in O(log n) time.
-
-
 
 // Example 1:
 
@@ -29,8 +28,7 @@ package findminimuminrotatedsortedarray
 
 // Input: nums = [11,13,15,17]
 // Output: 11
-// Explanation: The original array was [11,13,15,17] and it was rotated 4 times. 
-
+// Explanation: The original array was [11,13,15,17] and it was rotated 4 times.
 
 // Constraints:
 
@@ -42,7 +40,6 @@ package findminimuminrotatedsortedarray
 
 import "math"
 
-
 func findMin(nums []int) int {
 	l := 0
 	r := len(nums) - 1
@@ -51,20 +48,20 @@ func findMin(nums []int) int {
 	for l <= r {
 		// This means we are already in a sorted portion
 		if nums[l] < nums[r] {
-            result = int(math.Min(float64(nums[l]), float64(result) ))
+			result = int(math.Min(float64(nums[l]), float64(result)))
 			break
 		}
 
-        //check which portion we are
-        m := (l + r)/2;
-        result = int(math.Min(float64(nums[m]), float64(result) ))
+		//check which portion we are
+		m := (l + r) / 2
+		result = int(math.Min(float64(nums[m]), float64(result)))
 
-        // are we in the left sorted portion?
-        if nums[m]>=nums[l]{
-            l = m +1;
-        }else{ // are we in the right sorted portion?
-            r = m-1;
-        }
+		// are we in the left sorted portion?
+		if nums[m] >= nums[l] {
+			l = m + 1
+		} else { // are we in the right sorted portion?
+			r = m - 1
+		}
 	}
-    return result;
+	return result
 }
