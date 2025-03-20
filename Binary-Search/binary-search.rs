@@ -29,9 +29,9 @@ fn search_inner<T: Ord, F: Fn(&Vec<T>, T) -> bool>(
     let start = Instant::now();
     let is_found = f(set, search_param);
     let duration = start.elapsed();
-    println!("=====================================");
+    println!("===============================");
     println!("-> {:?} Algorithm", search_type);
-    println!("-> Runtime: {:?}", duration);
+    println!("-> Duration: {:?}", duration);
     is_found
 }
 
