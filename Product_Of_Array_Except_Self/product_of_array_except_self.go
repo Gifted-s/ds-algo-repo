@@ -29,14 +29,13 @@ func productExceptSelf(nums []int) []int {
 }
 
 // 2025 version
-
 func productExceptSelfV2(nums []int) []int {
 	res := make([]int, len(nums))
 	mul := 1
 	for i := range res {
 		res[i] = 1
 	}
-  
+
 	for i := 0; i < len(nums)-1; i++ {
 		res[i+1] = nums[i] * res[i]
 	}

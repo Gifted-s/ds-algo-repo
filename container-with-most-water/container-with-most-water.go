@@ -18,6 +18,28 @@ package containerwithmostwater
 // Input: height = [1,1]
 // Output: 1
 
+func maxAreaV2(height []int) int {
+
+	max := 0
+	l := 0
+	r := len(height) - 1
+
+	for l < r {
+		area := 1
+		if height[l] <= height[r] {
+			area = height[l] * (r - l)
+			l++
+		} else {
+			area = height[r] * (r - l)
+			r--
+		}
+		if area > max {
+			max = area
+		}
+	}
+	return max
+}
+
 func maxArea(height []int) int {
 	l := 0
 	r := len(height) - 1
