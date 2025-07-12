@@ -2,6 +2,38 @@ package longestrepeatingcharreplacement
 
 import "math"
 
+func characterReplacementV2(s string, k int) int {
+	l := 0
+	hash := make(map[byte]int)
+	max := 0
+
+	for r := 0; r < len(s); r++ {
+		hash[s[r]] += 1
+		for ((r - l + 1) - maxOccurrence(hash)) > k {
+			hash[s[l]] -= 1
+			if hash[s[l]] == 0 {
+				delete(hash, s[l])
+			}
+			l++
+		}
+		dif := r - l + 1
+		if dif > max {
+			max = dif
+		}
+	}
+	return max
+}
+
+func maxOccurrence(m map[byte]int) int {
+	maxVal := 0
+	for _, v := range m {
+		if v > maxVal {
+			maxVal = v
+		}
+	}
+	return maxVal
+}
+
 func characterReplacement(s string, k int) int {
 	countMap := map[rune]int{}
 	l := 0
